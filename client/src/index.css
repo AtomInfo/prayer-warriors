@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 20 14.3% 4.1%;
+  --muted: 60 4.8% 95.9%;
+  --muted-foreground: 25 5.3% 44.7%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 20 14.3% 4.1%;
+  --card: 0 0% 100%;
+  --card-foreground: 20 14.3% 4.1%;
+  --border: 20 5.9% 90%;
+  --input: 20 5.9% 90%;
+  --primary: 216 65% 31%; /* #1B4D89 (deep blue) */
+  --primary-foreground: 211 100% 99%;
+  --secondary: 45 62% 58%; /* #D4B254 (gold) */
+  --secondary-foreground: 0 0% 100%;
+  --accent: 214 44% 66%; /* #7FA6D3 (light blue) */
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --ring: 20 14.3% 4.1%;
+  --radius: 0.5rem;
+  --chart-1: 216 65% 31%;
+  --chart-2: 45 62% 58%;
+  --chart-3: 214 44% 66%;
+  --chart-4: 216 30% 40%;
+  --chart-5: 45 40% 70%;
+  --text: 0 0% 20%; /* #333333 (dark grey) */
+}
+
+.dark {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --primary: 216 65% 50%;
+  --primary-foreground: 211 100% 99%;
+  --secondary: 45 62% 58%;
+  --secondary-foreground: 0 0% 100%;
+  --accent: 214 44% 66%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 240 4.9% 83.9%;
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair font-bold text-primary;
+  }
+  
+  p {
+    @apply font-opensans text-[#333333];
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-6;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  
+  .section-title {
+    @apply font-playfair text-4xl font-bold text-primary mb-6;
+  }
+  
+  .section-subtitle {
+    @apply font-opensans text-lg text-[#333333] max-w-3xl mx-auto;
+  }
+  
+  .btn-primary {
+    @apply bg-secondary text-white px-8 py-3 rounded-md font-opensans font-semibold hover:bg-opacity-90 transition-colors text-center;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent border-2 border-white text-white px-8 py-3 rounded-md font-opensans font-semibold hover:bg-white hover:text-primary transition-colors text-center;
+  }
+  
+  .btn-tertiary {
+    @apply text-primary font-semibold hover:text-secondary transition-colors;
+  }
+}
+
+/* Fonts are imported in main.tsx */
+
+.sermon-overlay {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sermon-item:hover .sermon-overlay {
+  opacity: 1;
+}
+
+.event-card {
+  transition: all 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
